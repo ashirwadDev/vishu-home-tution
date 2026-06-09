@@ -65,7 +65,21 @@ background:#131b31;padding:25px;border-radius:20px;text-align:center;
 .contact{
 background:#131b31;padding:30px;border-radius:20px;text-align:center;
 }
+.teacher-img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+display:block;
+margin:auto;
+margin-bottom:15px;
+border:3px solid #ef4444;
+transition:.3s;
+}
 
+.teacher-img:hover{
+transform:scale(1.05);
+  }
 .fade{opacity:0;transform:translateY(40px);transition:1s}
 .show{opacity:1;transform:translateY(0)}
 
@@ -97,6 +111,16 @@ padding:20px;
 nav.active{display:flex}
 .hamburger{display:flex}
 }
+.teacher-img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+display:block;
+margin:auto;
+margin-bottom:15px;
+border:3px solid #ef4444;
+  }
 </style>
 </head>
 <body>
@@ -113,6 +137,7 @@ nav.active{display:flex}
 <nav id="menu">
 <a href="#about">About</a>
 <a href="#courses">Courses</a>
+<a href="#teachers">Teachers</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -122,7 +147,7 @@ nav.active{display:flex}
 <div>
 <h1><span id="typedText"></span></h1>
 <p>Trusted Home Tuition Services for LKG to 12th, NEET, JEE, NDA and Competitive Exams.</p>
-<a href="#contact" class="btn">Get Free Consultation</a>
+<a href="https://wa.me/917052500258?text=Hello%20Vishu%20Home%20Tuition" target="_blank" class="btn">Get Free Consultation</a>
 </div>
 </section>
 
@@ -157,7 +182,49 @@ nav.active{display:flex}
 <div class="card">NDA & Olympiads</div>
 </div>
 </section>
+<section id="teachers" class="fade">
+<h2>Meet Our Expert Teachers</h2>
 
+<div class="grid">
+
+<div class="card" style="text-align:center;">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400"
+class="teacher-img">
+
+<h3>Rahul Sharma</h3>
+
+<p>M.Sc Mathematics</p>
+
+<p>8+ Years Teaching Experience</p>
+
+</div>
+
+<div class="card" style="text-align:center;">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+class="teacher-img">
+
+<h3>Priya Singh</h3>
+
+<p>M.A English</p>
+
+<p>6+ Years Teaching Experience</p>
+
+</div>
+
+<div class="card" style="text-align:center;">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+class="teacher-img">
+
+<h3>Amit Verma</h3>
+
+<p>M.Sc Physics</p>
+
+<p>10+ Years Teaching Experience</p>
+
+</div>
+
+</div>
+</section>
 <section id="reviews" class="fade">
 <h2>Testimonials</h2>
 <div class="grid">
@@ -178,7 +245,7 @@ nav.active{display:flex}
 
 <footer>© 2026 Vishu Home Tuition</footer>
 
-<a href="#" class="whatsapp">💬</a>
+<a href="https://wa.me/917052500258?text=Hello%20Vishu%20Home%20Tuition" target="_blank" class="whatsapp">💬</a>
 
 <script>
 function toggleMenu(){
