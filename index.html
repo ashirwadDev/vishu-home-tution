@@ -19,11 +19,20 @@ nav a{color:#fff;text-decoration:none}
 .hamburger span{width:25px;height:3px;background:#fff}
 
 .hero{
-min-height:100vh;display:flex;justify-content:center;align-items:center;
-text-align:center;padding:20px;
-background:linear-gradient(-45deg,#0a0f1f,#7f1d1d,#111827,#991b1b);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(
+rgba(15,23,42,.85),
+rgba(15,23,42,.85)
+),
+url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600");
+background-size:cover;
+background-position:center;
 }
 @keyframes bg{
 0%{background-position:0% 50%}
@@ -33,10 +42,56 @@ animation:bg 12s ease infinite;
 .hero h1{font-size:clamp(2.5rem,7vw,5rem)}
 .hero p{max-width:700px;margin:20px auto;color:#ddd}
 .btn{
-display:inline-block;padding:14px 30px;border-radius:40px;
-background:#ef4444;color:#fff;text-decoration:none
+display:inline-block;
+padding:15px 35px;
+border-radius:50px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#1d4ed8
+);
+
+color:#fff;
+text-decoration:none;
+font-weight:600;
+
+box-shadow:
+0 10px 25px rgba(37,99,235,.35);
+
+transition:all .3s ease;
+}
+.btn{
+position:relative;
+overflow:hidden;
 }
 
+.btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.2),
+transparent
+);
+
+transition:.8s;
+}
+
+.btn:hover::before{
+left:100%;
+}
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:
+0 15px 35px rgba(37,99,235,.5);
+}
 section{padding:90px 8%}
 h2{text-align:center;margin-bottom:30px}
 
@@ -46,12 +101,53 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 .card{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(12px);
-padding:25px;border-radius:20px;
-transition:.3s;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.15);
+
+box-shadow:
+0 8px 32px rgba(0,0,0,0.25),
+0 0 20px rgba(37,99,235,0.08);
+
+padding:25px;
+border-radius:24px;
+
+transition:all .35s ease;
+overflow:hidden;
+position:relative;
 }
-.card:hover{transform:translateY(-10px)}
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+
+transition:.8s;
+}
+
+.card:hover::before{
+left:100%;
+  }
+.card:hover{
+transform:translateY(-12px) scale(1.02);
+
+border-color:rgba(37,99,235,.5);
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.35),
+0 0 25px rgba(37,99,235,.25);
+}
 
 .stats{
 display:grid;
@@ -59,7 +155,14 @@ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
 }
 .stat{
-background:#131b31;padding:25px;border-radius:20px;text-align:center;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
+
+padding:25px;
+border-radius:24px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.25);
 }
 
 .contact{
@@ -160,6 +263,29 @@ padding:0 20px;
 padding:0 0 20px;
 color:#ddd;
   }
+.hero-badges{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin:25px 0;
+}
+
+.hero-badges span{
+background:rgba(255,255,255,.1);
+padding:10px 15px;
+border-radius:30px;
+backdrop-filter:blur(10px);
+font-size:14px;
+}
+
+.btn{
+background:#2563eb !important;
+}
+
+.btn:hover{
+background:#1d4ed8 !important;
+  }
 </style>
 </head>
 <body>
@@ -184,9 +310,24 @@ color:#ddd;
 
 <section class="hero">
 <div>
+
 <h1><span id="typedText"></span></h1>
-<p>Trusted Home Tuition Services for LKG to 12th, NEET, JEE, NDA and Competitive Exams.</p>
-<a href="https://wa.me/917052500258?text=Hello%20Vishu%20Home%20Tuition" target="_blank" class="btn">Get Free Consultation</a>
+
+<p>
+Trusted Home Tuition Services for LKG to 12th,
+NEET, JEE, NDA and Competitive Exams.
+</p>
+
+<div class="hero-badges">
+<span>🏆 1800+ Teachers</span>
+<span>📚 All Subjects</span>
+<span>⭐ Since 2017</span>
+</div>
+
+<a href="#contact" class="btn">
+Get Free Consultation
+</a>
+
 </div>
 </section>
 
