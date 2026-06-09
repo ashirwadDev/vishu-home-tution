@@ -121,6 +121,45 @@ margin:auto;
 margin-bottom:15px;
 border:3px solid #ef4444;
   }
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+margin-bottom:15px;
+border-radius:15px;
+overflow:hidden;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(10px);
+}
+
+.faq-question{
+width:100%;
+background:none;
+border:none;
+color:white;
+padding:20px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+text-align:left;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+padding:0 20px;
+}
+
+.faq-answer p{
+padding:0 0 20px;
+color:#ddd;
+  }
 </style>
 </head>
 <body>
@@ -233,7 +272,53 @@ class="teacher-img">
 <div class="card">"Highly professional service."</div>
 </div>
 </section>
+<section id="faq" class="fade">
+<h2>Frequently Asked Questions</h2>
 
+<div class="faq-container">
+
+<div class="faq-item">
+<button class="faq-question">
+How do I book a demo class?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>Simply contact us through WhatsApp or call us and our team will arrange a free demo class.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Do you provide home tuition?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>Yes, we provide home tuition services across Gorakhpur with verified teachers.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Are online classes available?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>Yes, both online and offline classes are available according to student requirements.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Which classes do you cover?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>We provide tuition from LKG to 12th along with NEET, JEE, NDA and Olympiad preparation.</p>
+</div>
+</div>
+
+</div>
+</section>
 <section id="contact" class="fade">
 <div class="contact">
 <h2>Contact Us</h2>
@@ -284,7 +369,22 @@ wi=(wi+1)%words.length;
 setTimeout(type,deleting?50:100);
 }
 type();
+document.querySelectorAll(".faq-question").forEach(button => {
+button.addEventListener("click", () => {
 
+const answer = button.nextElementSibling;
+
+if(answer.style.maxHeight){
+answer.style.maxHeight = null;
+button.querySelector("span").innerText = "+";
+}
+else{
+answer.style.maxHeight = answer.scrollHeight + "px";
+button.querySelector("span").innerText = "−";
+}
+
+});
+});
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
